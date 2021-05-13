@@ -7,38 +7,37 @@ const Summary = (props) => {
 
 
     return (
-        <div className="row">
-            <div className="NewConfirmed">
-                <h3>New Confirmed</h3>
-                <h1>{props.global.NewConfirmed}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
+        <div class="container justify-content-center">
+                <div className="row">
+                    <div className="col-3 mx-auto alert alert-primary border border-primary">
+                        <h6>New Confirmed</h6>
+                        <h5>{props.global.NewConfirmed}</h5>
+                    </div>
+                    <div className="col-3 mx-auto alert alert-secondary border border-primary">
+                        <h6>Total Confirmed</h6>
+                        <h5>{props.global.TotalConfirmed}</h5>
+                    </div>
+                    <div className="col-3 mx-auto alert alert-success border border-primary">
+                        <h6>New Deaths</h6>
+                        <h5>{props.global.NewDeaths}</h5>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 mx-auto alert alert-danger border border-primary">
+                        <h6>Total Deaths</h6>
+                        <h5>{props.global.TotalDeaths}</h5>
+                    </div>
+                    <div className="col-3 mx-auto alert alert-warning border border-primary">
+                        <h6>New Recovered</h6>
+                        <h5>{props.global.NewRecovered}</h5>
+                    </div>
+                    <div className="col-3 mx-auto alert alert-info border border-primary">
+                        <h6>Total Recovered</h6>
+                        <h5>{props.global.TotalRecovered}</h5>
+                    </div>
+                </div>
             </div>
-            <div className="TotalConfirmed">
-                <h3>Total Confirmed</h3>
-                <h1>{props.global.TotalConfirmed}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
-            </div>
-            <div className="NewDeaths">
-                <h3>New Deaths</h3>
-                <h1>{props.global.NewDeaths}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
-            </div>
-            <div className="TotalDeaths">
-                <h3>Total Deaths</h3>
-                <h1>{props.global.TotalDeaths}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
-            </div>
-            <div className="NewRecovered">
-                <h3>New Recovered</h3>
-                <h1>{props.global.NewRecovered}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
-            </div>
-            <div className="TotalRecovered">
-                <h3>Total Recovered</h3>
-                <h1>{props.global.TotalRecovered}</h1>
-                <h4>{new Date(props.currentDate).toDateString()}</h4>
-            </div>
-        </div>
+        
       );
 };
 export default Summary;

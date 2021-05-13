@@ -34,26 +34,28 @@ const Details = () => {
             </div>
           ) : (
             <div>
-                <h1 className="header">Covid-19 Tracker</h1>
+                <h1 className="header alert alert-primary text-center">Covid-19 Tracker</h1>
                 <Summary global={global} currentDate={currentDate}/>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Country</th>
-                            <th>New Confirmed</th>
-                            <th>New Deaths</th>
-                            <th>New Recovered</th>
-                            <th>Total Confirmed</th>
-                            <th>Total Deaths</th>
-                            <th>Total Recovered</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {countries.map(country => {
-                            return <Countries countries={country} key={country.CountryCode}/>
-                        })}
-                    </tbody>
-                </table>
+                <div className="table-responsive">
+                  <table className="table table-hover">
+                      <thead>
+                          <tr>
+                              <th scope="col">Country</th>
+                              <th scope="col">New Confirmed</th>
+                              <th scope="col">New Deaths</th>
+                              <th scope="col">New Recovered</th>
+                              <th scope="col">Total Confirmed</th>
+                              <th scope="col">Total Deaths</th>
+                              <th scope="col">Total Recovered</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {countries.map(country => {
+                              return <Countries countries={country} key={country.CountryCode}/>
+                          })}
+                      </tbody>
+                  </table>
+                </div>      
             </div>
           )}
           </div>
