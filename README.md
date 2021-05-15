@@ -9,3 +9,5 @@ Deployment steps :
 2. Install github pages - npm install --save gh-pages
 3. Add predeploy and deploy stages in scripts
 4. npm run deploy
+
+npm install semantic-ui-react semantic-ui-css

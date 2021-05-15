@@ -1,5 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
+import {
+    Grid,
+    Container,
+    Card
+  } from 'semantic-ui-react'
 const Summary = (props) => {
     useEffect(() => {
         
@@ -7,36 +12,76 @@ const Summary = (props) => {
 
 
     return (
-        <div class="container justify-content-center">
-                <div className="row">
-                    <div className="col-3 mx-auto alert alert-primary border border-primary">
-                        <h6>New Confirmed</h6>
-                        <h5>{props.global.NewConfirmed}</h5>
-                    </div>
-                    <div className="col-3 mx-auto alert alert-secondary border border-primary">
-                        <h6>Total Confirmed</h6>
-                        <h5>{props.global.TotalConfirmed}</h5>
-                    </div>
-                    <div className="col-3 mx-auto alert alert-success border border-primary">
-                        <h6>New Deaths</h6>
-                        <h5>{props.global.NewDeaths}</h5>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-3 mx-auto alert alert-danger border border-primary">
-                        <h6>Total Deaths</h6>
-                        <h5>{props.global.TotalDeaths}</h5>
-                    </div>
-                    <div className="col-3 mx-auto alert alert-warning border border-primary">
-                        <h6>New Recovered</h6>
-                        <h5>{props.global.NewRecovered}</h5>
-                    </div>
-                    <div className="col-3 mx-auto alert alert-info border border-primary">
-                        <h6>Total Recovered</h6>
-                        <h5>{props.global.TotalRecovered}</h5>
-                    </div>
-                </div>
-            </div>
+        <Container>
+            <Grid columns={3} doubling>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>New Confirmed</Card.Header>
+                            <Card.Meta>New Confirmed Cases of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.NewConfirmed}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>Total Confirmed</Card.Header>
+                            <Card.Meta>Total Confirmed Cases of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.TotalConfirmed}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>New Deaths</Card.Header>
+                            <Card.Meta>New Deaths of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.NewDeaths}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>Total Deaths</Card.Header>
+                            <Card.Meta>Total Deaths of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.TotalDeaths}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>New Recovered</Card.Header>
+                            <Card.Meta>New Recoveries of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.NewRecovered}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+                <Grid.Column>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>Total Recovered</Card.Header>
+                            <Card.Meta>Total Recoveries of of today</Card.Meta>
+                            <Card.Description>
+                                {props.global.TotalRecovered}
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                </Grid.Column>
+            </Grid>
+        </Container>
         
       );
 };

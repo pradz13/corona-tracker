@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import InvokeService from "../InvokeService";
 import Countries from "./Countries";
 import Summary from "./Summary";
+import { Message, Table } from 'semantic-ui-react';
 
 const Details = () => {
     useEffect(() => {
@@ -34,28 +35,31 @@ const Details = () => {
             </div>
           ) : (
             <div>
-                <h1 className="header alert alert-primary text-center">Covid-19 Tracker</h1>
+                <Message info style={{textAlign: "center"}}>
+                  <Message.Header>Covid-19 Tracker</Message.Header>
+                  <p>
+                    Covid-19 Tracker showing the holistic view of the current situation
+                  </p>
+                </Message>
                 <Summary global={global} currentDate={currentDate}/>
-                <div className="table-responsive">
-                  <table className="table table-hover">
-                      <thead>
-                          <tr>
-                              <th scope="col">Country</th>
-                              <th scope="col">New Confirmed</th>
-                              <th scope="col">New Deaths</th>
-                              <th scope="col">New Recovered</th>
-                              <th scope="col">Total Confirmed</th>
-                              <th scope="col">Total Deaths</th>
-                              <th scope="col">Total Recovered</th>
-                          </tr>
-                      </thead>
-                      <tbody>
+                  <Table celled>
+                      <Table.Header>
+                        <Table.Row>
+                              <Table.HeaderCell>Country</Table.HeaderCell>
+                              <Table.HeaderCell>New Confirmed</Table.HeaderCell>
+                              <Table.HeaderCell>New Deaths</Table.HeaderCell>
+                              <Table.HeaderCell>New Recovered</Table.HeaderCell>
+                              <Table.HeaderCell>Total Confirmed</Table.HeaderCell>
+                              <Table.HeaderCell>Total Deaths</Table.HeaderCell>
+                              <Table.HeaderCell>Total Recovered</Table.HeaderCell>
+                        </Table.Row>
+                      </Table.Header>
+                      <Table.Body>
                           {countries.map(country => {
                               return <Countries countries={country} key={country.CountryCode}/>
                           })}
-                      </tbody>
-                  </table>
-                </div>      
+                      </Table.Body>
+                  </Table>    
             </div>
           )}
           </div>
